@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: rgb(23, 23, 23);
+	scroll-behavior: smooth;
+	min-width: 250px;
+	width: 100%;
+}
+.container {
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.hero-img-overlay {
+	background: rgb(255, 255, 255);
+	background: linear-gradient(
+		220deg,
+		rgba(255, 255, 255, 0.2) 21%,
+		rgba(0, 0, 0, 0.9) 98%
+	);
+}
+header {
+	background: url("./assets/hero-image.jpeg") no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+.link-state {
+	width: fit-content;
+	display: block;
+}
+.link-state::after {
+	content: " ";
+	height: 2px;
+	width: 0;
+	margin-top: 3px;
+	display: block;
+	background-color: white;
+	transition: width 0.3s ease-in-out;
+}
+.link-state:hover::after {
+	width: 100%;
+}
+.artworks-grid {
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-areas: "one" "two" "third" "fourth";
+	gap: 20px;
+}
+.artworks-grid > div:nth-of-type(1) {
+	grid-area: one;
+}
+.artworks-grid > div img {
+	width: 100%;
+}
+.artworks-grid > div:nth-of-type(1),
+.artworks-grid > div:nth-of-type(2),
+.artworks-grid > div:nth-of-type(3),
+.artworks-grid > div:nth-of-type(4) {
+	height: 24rem;
+	width: 100%;
+}
+.artworks-grid > div > a {
+	width: inherit;
+	height: inherit;
+}
+.artworks-grid > div:nth-of-type(2) {
+	grid-area: two;
+}
+.artworks-grid > div:nth-of-type(3) {
+	grid-area: third;
+}
+.artworks-grid > div:nth-of-type(3) img {
+	max-height: 100%;
+	height: 100%;
+	width: 100%;
+}
+.artworks-grid > div:nth-of-type(4) {
+	grid-area: fourth;
+	max-height: 24rem;
+}
+.artists-grid {
+	grid-template-columns: repeat(auto-fill, 275px);
+	place-content: center;
+}
+.article-grid {
+	grid-template-columns: repeat(auto-fit, 275px);
+	place-content: center;
+}
+.article-grid a:nth-of-type(2n + 1) {
+	background-color: burlywood;
+}
+.artist-page-image-grid,
+.masonry-grid-container {
+	margin: 5rem auto;
+	display: column;
+	columns: 1;
+	gap: 1rem;
+}
+.artist-page-image-grid {
+	max-width: 50rem;
+}
+.masonry-grid-container {
+	margin: 2.5rem auto;
+}
+.artist-page-image-grid > *,
+.masonry-grid-container > * {
+	break-inside: avoid;
+	margin-bottom: 1rem;
+}
+@supports (grid-template-rows: masonry) {
+	.artist-page-image-grid,
+	.masonry-grid-container {
+		display: grid;
+		grid-template-columns: repeat(var(--columns), 1fr);
+		grid-template-rows: masonry;
+		grid-auto-flow: dense;
+	}
+	.artist-page-image-grid > *,
+	.masonry-grid-container > * {
+		margin-bottom: 0em;
+	}
+}
+.artwork-artist-list li {
+	display: flex;
+	gap: 1rem;
+	font-size: 1.3rem;
+	font-weight: bold;
+	color: rgb(218, 211, 211);
+}
+.artwork-artist-list li span,
+.artwork-artist-list li a {
+	font-weight: 400;
+	color: white;
+}
+.artwork-page-grid {
+	grid-template-columns: repeat(1, 1fr);
+}
+.MuiPagination-outlined button {
+	color: white;
+	border: 1px solid white;
+	font-weight: bold;
+}
+.MuiPaginationItem-ellipsis {
+	color: white !important;
+}
+.slick-next,
+.slick-prev {
+	top: -60px;
+}
+.slick-next::before,
+.slick-prev::before {
+	font-size: 29px;
+}
+.slick-prev {
+	right: 40px;
+	left: auto;
+}
+.slick-next {
+	right: 0;
+}
+.slick-slide > div {
+	margin: 0 12px;
+}
+.default-artist-image {
+	background: rgb(19, 115, 109);
+	background: linear-gradient(
+		187deg,
+		rgba(19, 115, 109, 1) 40%,
+		rgba(31, 81, 152, 1) 62%
+	);
+}
+.article-component-image {
+	background: rgb(21, 13, 68);
+	background: linear-gradient(
+		187deg,
+		rgba(21, 13, 68, 1) 40%,
+		rgba(9, 61, 27, 1) 62%
+	);
+}
+.default-artwork-image {
+	background: rgb(122, 21, 131);
+	background: linear-gradient(
+		187deg,
+		rgba(122, 21, 131, 1) 38%,
+		rgba(33, 9, 61, 1) 62%
+	);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/* Media Queries */
+@media (min-width: 500px) {
+	.artist-page-image-grid,
+	.masonry-grid-container {
+		columns: 2;
+	}
+}
+@media (min-width: 650px) {
+	.artworks-grid {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas: "one two" "third fourth";
+		gap: 20px;
+	}
+}
+@media (min-width: 1025px) {
+	.artworks-grid {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-areas: "one two third" "fourth fourth third";
+		gap: 2.5rem;
+	}
+	.artworks-grid > div:nth-of-type(3) {
+		height: 100%;
+		max-height: 100%;
+	}
+	.artworks-grid > div:nth-of-type(4) {
+		height: 100%;
+		max-height: 24rem;
+	}
+	.artist-page-image-grid,
+	.masonry-grid-container {
+		columns: 3;
+		gap: 2rem;
+	}
+	.artwork-page-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

@@ -1,0 +1,62 @@
+{
+	"name": "amateurs-d-art",
+	"version": "0.1.0",
+	"author": {
+		"name": "Karishma Garg",
+		"email": "jainkarishma76@gmail.com",
+		"url": "http://Krrish105.github.io/karishmagarg/"
+	},
+	"private": true,
+	"description": "Amateurs d'art is a website where the user can see artworks from the Art Institute Of Chicago.",
+	"homepage": "https://krrish105.github.io/amateurs-d-art/",
+	"repository": "https://github.com/Krrish105/amateurs-d-art",
+	"dependencies": {
+		"@emotion/react": "^11.9.3",
+		"@emotion/styled": "^11.9.3",
+		"@mui/material": "^5.8.5",
+		"@testing-library/jest-dom": "^5.16.4",
+		"@testing-library/react": "^13.3.0",
+		"@testing-library/user-event": "^13.5.0",
+		"axios": "^0.27.2",
+		"gh-pages": "^4.0.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-router": "^6.3.0",
+		"react-router-dom": "^6.3.0",
+		"react-scripts": "5.0.1",
+		"react-slick": "^0.29.0",
+		"slick-carousel": "^1.8.1",
+		"web-vitals": "^2.1.4"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.7",
+		"postcss": "^8.4.14",
+		"tailwindcss": "^3.1.3"
+	}
+}
